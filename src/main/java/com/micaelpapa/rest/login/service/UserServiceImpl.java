@@ -85,7 +85,9 @@ public class UserServiceImpl {
 			logger.error(e.getMessage());
 			return new AppRestResponse("Internal server error", false, AppRestResponse.EStatusCode.ERROR.value(), null);
 		}
-		return new AppRestResponse(null, true, AppRestResponse.EStatusCode.OK.value(), user);
+		user.setLastlogin(ZonedDateTime.now());
+		userRepository.persistAppUser(user);
+		return new AppRestResponse("", true, AppRestResponse.EStatusCode.OK.value(), user);
 	}
 
 	private AppUser completeFieldsNewUser(AppUserDTO userDTO) throws ParseException {

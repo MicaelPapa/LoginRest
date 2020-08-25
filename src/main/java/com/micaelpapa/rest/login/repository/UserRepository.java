@@ -27,10 +27,6 @@ public class UserRepository {
 	}
 
 	@Transactional
-	public void updateAppUser(AppUser user) throws Exception {
-	}
-
-	@Transactional
 	public AppUser findAppUser(String mail) {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
 		CriteriaQuery<AppUser> cq = cb.createQuery(AppUser.class);
