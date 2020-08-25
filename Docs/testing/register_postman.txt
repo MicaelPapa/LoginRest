@@ -1,0 +1,14 @@
+url = http://localhost:8081/user/register
+body = {
+	"firstname":"micael",
+	"lastname":"papa",
+	"mail":"micael15papa@gmail.com",
+	"password":"123Rww",
+	"matchingPassword":"123Rww",
+	"isActive":true,
+	"phones":[{
+		"number":"53748840",
+		"citycode":"223",
+		"countrycode":"+54"
+	}]
+}

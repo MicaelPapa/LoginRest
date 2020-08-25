@@ -1,0 +1,12 @@
+* En cuanto al desarrollo del microservicio y como esta implementado cambiaria en el caso 
+de que se use contra una aplicacion real que le dispare request. Por ejemplo uno de los 
+cambios mas importante seria que todos los objetos que estan dentro del package model
+deberian estar dentro de otro proyecto y entonces se compartirian como un common con la
+aplicacion principal que hace las request al microservicio
+* Hay un bug en el microservicio que descubri a ultimo momento y es que si uno trata de
+registrar dos usuarios con los mismos numero de telefono el microservicio lo controla y
+nos devuelve una respuesta de error. Aunque el usuario se crea y luego si se le cambian
+los numeros de telefono ya no se puede crear el usuario porque se creo previamente con 
+el mismo email. Esto se solucionaria dejando que jpa se encargue del insert de los 
+numeros de telefono al persistir el usuario o alternativamente con una transaccion y 
+manejando bien la annotation @Transactional.
